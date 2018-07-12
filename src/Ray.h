@@ -22,12 +22,16 @@ public:
         dir = _d;
     }
 
-    Vector3 pos() {
+    Vector3 Pos()  const{
         return pos;
     }
 
-    Vector3 dir(){
+    Vector3 Dir() const{
         return dir;
+    }
+
+    Vector3 initPos(double _t) const{
+        return pos + _t * dir;
     }
 };
 

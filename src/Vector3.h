@@ -229,6 +229,10 @@ inline Vector3 operator*(const Vector3 &_v0, const double &_d) {
     return {_v0[0] * _d, _v0[1] * _d, _v0[2] * _d};
 }
 
+inline Vector3 operator*(const double &_d, const Vector3 &_v0) {
+    return {_v0[0] * _d, _v0[1] * _d, _v0[2] * _d};
+}
+
 inline Vector3 operator/(const Vector3 &_v0, const Vector3 &_v1) {
     return {_v0[0] / _v1[0], _v0[1] / _v1[1], _v0[2] / _v1[2]};
 }
