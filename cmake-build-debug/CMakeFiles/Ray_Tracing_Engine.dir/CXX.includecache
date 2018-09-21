@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/PNGMaster.h
+svpng.inc
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/svpng.inc
+cstring
+-
+iostream
+-
+
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Ray.h
+Vector3.h
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Vector3.h
+
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Vector3.h
+iostream
+-
+cmath
+-
+
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/main.cpp
+iostream
+-
+Vector3.h
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Vector3.h
+PNGMaster.h
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/PNGMaster.h
+Ray.h
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Ray.h
+
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/svpng.inc
+stdio.h
+-
+
