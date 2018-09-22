@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Scene.cpp" "/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/cmake-build-debug/CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o"
+  "/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Sphere.cpp" "/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/cmake-build-debug/CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o"
   "/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/main.cpp" "/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/cmake-build-debug/CMakeFiles/Ray_Tracing_Engine.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

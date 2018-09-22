@@ -123,6 +123,60 @@ Ray_Tracing_Engine/fast:
 	$(MAKE) -f CMakeFiles/Ray_Tracing_Engine.dir/build.make CMakeFiles/Ray_Tracing_Engine.dir/build
 .PHONY : Ray_Tracing_Engine/fast
 
+src/Scene.o: src/Scene.cpp.o
+
+.PHONY : src/Scene.o
+
+# target to build an object file
+src/Scene.cpp.o:
+	$(MAKE) -f CMakeFiles/Ray_Tracing_Engine.dir/build.make CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o
+.PHONY : src/Scene.cpp.o
+
+src/Scene.i: src/Scene.cpp.i
+
+.PHONY : src/Scene.i
+
+# target to preprocess a source file
+src/Scene.cpp.i:
+	$(MAKE) -f CMakeFiles/Ray_Tracing_Engine.dir/build.make CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.i
+.PHONY : src/Scene.cpp.i
+
+src/Scene.s: src/Scene.cpp.s
+
+.PHONY : src/Scene.s
+
+# target to generate assembly for a file
+src/Scene.cpp.s:
+	$(MAKE) -f CMakeFiles/Ray_Tracing_Engine.dir/build.make CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.s
+.PHONY : src/Scene.cpp.s
+
+src/Sphere.o: src/Sphere.cpp.o
+
+.PHONY : src/Sphere.o
+
+# target to build an object file
+src/Sphere.cpp.o:
+	$(MAKE) -f CMakeFiles/Ray_Tracing_Engine.dir/build.make CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o
+.PHONY : src/Sphere.cpp.o
+
+src/Sphere.i: src/Sphere.cpp.i
+
+.PHONY : src/Sphere.i
+
+# target to preprocess a source file
+src/Sphere.cpp.i:
+	$(MAKE) -f CMakeFiles/Ray_Tracing_Engine.dir/build.make CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.i
+.PHONY : src/Sphere.cpp.i
+
+src/Sphere.s: src/Sphere.cpp.s
+
+.PHONY : src/Sphere.s
+
+# target to generate assembly for a file
+src/Sphere.cpp.s:
+	$(MAKE) -f CMakeFiles/Ray_Tracing_Engine.dir/build.make CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.s
+.PHONY : src/Sphere.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -159,6 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Ray_Tracing_Engine"
 	@echo "... edit_cache"
+	@echo "... src/Scene.o"
+	@echo "... src/Scene.i"
+	@echo "... src/Scene.s"
+	@echo "... src/Sphere.o"
+	@echo "... src/Sphere.i"
+	@echo "... src/Sphere.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

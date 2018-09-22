@@ -81,17 +81,69 @@ CMakeFiles/Ray_Tracing_Engine.dir/src/main.cpp.o.provides: CMakeFiles/Ray_Tracin
 CMakeFiles/Ray_Tracing_Engine.dir/src/main.cpp.o.provides.build: CMakeFiles/Ray_Tracing_Engine.dir/src/main.cpp.o
 
 
+CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o: CMakeFiles/Ray_Tracing_Engine.dir/flags.make
+CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o: ../src/Scene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o -c /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Scene.cpp
+
+CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Scene.cpp > CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.i
+
+CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Scene.cpp -o CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.s
+
+CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o.requires:
+
+.PHONY : CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o.requires
+
+CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o.provides: CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Ray_Tracing_Engine.dir/build.make CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o.provides.build
+.PHONY : CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o.provides
+
+CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o.provides.build: CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o
+
+
+CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o: CMakeFiles/Ray_Tracing_Engine.dir/flags.make
+CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o: ../src/Sphere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o -c /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Sphere.cpp
+
+CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Sphere.cpp > CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.i
+
+CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Sphere.cpp -o CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.s
+
+CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o.requires:
+
+.PHONY : CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o.requires
+
+CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o.provides: CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Ray_Tracing_Engine.dir/build.make CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o.provides.build
+.PHONY : CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o.provides
+
+CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o.provides.build: CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o
+
+
 # Object files for target Ray_Tracing_Engine
 Ray_Tracing_Engine_OBJECTS = \
-"CMakeFiles/Ray_Tracing_Engine.dir/src/main.cpp.o"
+"CMakeFiles/Ray_Tracing_Engine.dir/src/main.cpp.o" \
+"CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o" \
+"CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o"
 
 # External object files for target Ray_Tracing_Engine
 Ray_Tracing_Engine_EXTERNAL_OBJECTS =
 
 Ray_Tracing_Engine: CMakeFiles/Ray_Tracing_Engine.dir/src/main.cpp.o
+Ray_Tracing_Engine: CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o
+Ray_Tracing_Engine: CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o
 Ray_Tracing_Engine: CMakeFiles/Ray_Tracing_Engine.dir/build.make
 Ray_Tracing_Engine: CMakeFiles/Ray_Tracing_Engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Ray_Tracing_Engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Ray_Tracing_Engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Ray_Tracing_Engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +152,8 @@ CMakeFiles/Ray_Tracing_Engine.dir/build: Ray_Tracing_Engine
 .PHONY : CMakeFiles/Ray_Tracing_Engine.dir/build
 
 CMakeFiles/Ray_Tracing_Engine.dir/requires: CMakeFiles/Ray_Tracing_Engine.dir/src/main.cpp.o.requires
+CMakeFiles/Ray_Tracing_Engine.dir/requires: CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o.requires
+CMakeFiles/Ray_Tracing_Engine.dir/requires: CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o.requires
 
 .PHONY : CMakeFiles/Ray_Tracing_Engine.dir/requires
 

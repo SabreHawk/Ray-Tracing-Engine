@@ -84,6 +84,24 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Ray.h">
+			<Option target="Ray_Tracing_Engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Scene.cpp">
+			<Option target="Ray_Tracing_Engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Scene.h">
+			<Option target="Ray_Tracing_Engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Sphere.cpp">
+			<Option target="Ray_Tracing_Engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Sphere.h">
+			<Option target="Ray_Tracing_Engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/Vector3.h">
+			<Option target="Ray_Tracing_Engine"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/src/main.cpp">
 			<Option target="Ray_Tracing_Engine"/>
 		</Unit>

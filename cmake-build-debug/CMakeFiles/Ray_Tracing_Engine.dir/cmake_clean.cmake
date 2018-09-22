@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Ray_Tracing_Engine.dir/src/main.cpp.o"
+  "CMakeFiles/Ray_Tracing_Engine.dir/src/Scene.cpp.o"
+  "CMakeFiles/Ray_Tracing_Engine.dir/src/Sphere.cpp.o"
   "Ray_Tracing_Engine.pdb"
   "Ray_Tracing_Engine"
 )
