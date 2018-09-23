@@ -84,6 +84,30 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Object.h">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Ray.h">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Scene.cpp">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Scene.h">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Sphere.cpp">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Sphere.h">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Vector3.cpp">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Vector3.h">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/main.cpp">
 			<Option target="ray_tracing_engine"/>
 		</Unit>

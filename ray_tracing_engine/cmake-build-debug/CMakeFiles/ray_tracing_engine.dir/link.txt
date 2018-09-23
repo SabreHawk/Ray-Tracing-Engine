@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/ray_tracing_engine.dir/main.cpp.o  -o ray_tracing_engine 
+/usr/bin/c++  -g   CMakeFiles/ray_tracing_engine.dir/main.cpp.o CMakeFiles/ray_tracing_engine.dir/Scene.cpp.o CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.o CMakeFiles/ray_tracing_engine.dir/Vector3.cpp.o  -o ray_tracing_engine 

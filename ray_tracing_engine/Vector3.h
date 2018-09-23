@@ -19,7 +19,7 @@ public:
 
     Vector3(double, double, double);
 
-    inline void setVector(double,double,double);
+    inline void setVector(double, double, double);
 
     inline double x() const;
 
@@ -59,23 +59,10 @@ public:
 
     inline double length() const;
 
-    inline const Vector3 &normalize();
+    inline Vector3 normalize();
 
 };
 
-Vector3::Vector3() = default;
-
-Vector3::Vector3(const Vector3 &_v) {
-    for (int i = 0; i < 3; ++i) {
-        this->vec3[i] = _v[i];
-    }
-}
-
-Vector3::Vector3(double _n0, double _n1, double _n2) {
-    this->vec3[0] = _n0;
-    this->vec3[1] = _n1;
-    this->vec3[2] = _n2;
-}
 
 inline void Vector3::setVector(double _p0, double _p1, double _p2) {
     vec3[0] = _p0;
@@ -83,27 +70,27 @@ inline void Vector3::setVector(double _p0, double _p1, double _p2) {
     vec3[2] = _p2;
 }
 
-double Vector3::x() const {
+inline double Vector3::x() const {
     return this->vec3[0];
 }
 
-double Vector3::y() const {
+inline double Vector3::y() const {
     return this->vec3[1];
 }
 
-double Vector3::z() const {
+inline double Vector3::z() const {
     return this->vec3[2];
 }
 
-double Vector3::r() const {
+inline double Vector3::r() const {
     return this->vec3[0];
 }
 
-double Vector3::g() const {
+inline double Vector3::g() const {
     return this->vec3[1];
 }
 
-double Vector3::b() const {
+inline double Vector3::b() const {
     return this->vec3[2];
 }
 
@@ -112,7 +99,7 @@ inline const Vector3 &Vector3::operator+() const {
 }
 
 inline Vector3 Vector3::operator-() {
-    return Vector3(-1*this->vec3[0],-1*this->vec3[1],-1*this->vec3[2]);
+    return Vector3(-1 * this->vec3[0], -1 * this->vec3[1], -1 * this->vec3[2]);
 }
 
 inline double Vector3::operator[](int _i) const {
@@ -145,7 +132,7 @@ inline Vector3 &Vector3::operator*=(const Vector3 &_v) {
 }
 
 inline Vector3 &Vector3::operator*=(const double &_d) {
-    for (double &data:this->vec3) {
+    for (double &data : this->vec3) {
         data *= _d;
     }
     return *this;
@@ -169,13 +156,15 @@ inline double Vector3::length() const {
     return sqrt(this->vec3[0] * this->vec3[0] + this->vec3[1] * this->vec3[1] + this->vec3[2] * this->vec3[2]);
 }
 
-inline const Vector3 &Vector3::normalize() {
+inline Vector3 Vector3::normalize() {
     double tmp_len = this->length();
-    for (double &data:this->vec3) {
+    Vector3 tmp_v = *this;
+    for (double &data : tmp_v.vec3) {
         data /= tmp_len;
     }
-    return *this;
+    return tmp_v;
 }
+
 
 inline bool Vector3::operator==(const Vector3 &_v) {
     for (int i = 0; i < 3; ++i) {
@@ -189,7 +178,6 @@ inline bool Vector3::operator==(const Vector3 &_v) {
 inline bool Vector3::operator!=(const Vector3 &_v) {
     return !(*this == _v);
 }
-
 
 inline std::istream &operator>>(std::istream &_is, Vector3 &_v) {
     _is >> _v[0] >> _v[1] >> _v[2];
@@ -209,7 +197,7 @@ inline double dot(const Vector3 &_v0, const Vector3 &_v1) {
     return tmp_result;
 }
 
-inline Vector3 cross(const Vector3 &_v0, const Vector3 _v1) {
+inline Vector3 cross(const Vector3 &_v0, const Vector3 &_v1) {
     return {_v0[1] * _v1[2] - _v0[2] * _v1[1], _v0[2] * _v1[0] - _v0[0] * _v1[2], _v0[0] * _v1[1] - _v0[1] * _v1[0]};
 }
 

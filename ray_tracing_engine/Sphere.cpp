@@ -2,24 +2,10 @@
 // Created by mySab on 2018/9/22.
 //
 
-#ifndef RAY_TRACING_ENGINE_SPHERE_H
-#define RAY_TRACING_ENGINE_SPHERE_H
+#include "Sphere.h"
 
-#include "Object.h"
 
-class Sphere : public Object {
-private:
-    Vector3 center;
-    double radius;
-public:
-    Sphere() = default;
-
-    Sphere(const Vector3 &, double);
-
-    virtual bool hit(const Ray &, double, double, hitInfo &) const;
-
-    virtual void dispInfo();
-};
+Sphere::Sphere() = default;
 
 Sphere::Sphere(const Vector3 &_c, double _r) : center(_c), radius(_r) {
 
@@ -58,4 +44,4 @@ void Sphere::dispInfo() {
 }
 
 
-#endif //RAY_TRACING_ENGINE_SPHERE_H
+

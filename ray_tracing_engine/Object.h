@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include "Ray.h"
-#include "Vector3.h"
 
 struct hitInfo {
     double t;

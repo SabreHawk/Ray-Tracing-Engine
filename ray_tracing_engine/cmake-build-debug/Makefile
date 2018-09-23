@@ -123,6 +123,87 @@ ray_tracing_engine/fast:
 	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/build
 .PHONY : ray_tracing_engine/fast
 
+Scene.o: Scene.cpp.o
+
+.PHONY : Scene.o
+
+# target to build an object file
+Scene.cpp.o:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Scene.cpp.o
+.PHONY : Scene.cpp.o
+
+Scene.i: Scene.cpp.i
+
+.PHONY : Scene.i
+
+# target to preprocess a source file
+Scene.cpp.i:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Scene.cpp.i
+.PHONY : Scene.cpp.i
+
+Scene.s: Scene.cpp.s
+
+.PHONY : Scene.s
+
+# target to generate assembly for a file
+Scene.cpp.s:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Scene.cpp.s
+.PHONY : Scene.cpp.s
+
+Sphere.o: Sphere.cpp.o
+
+.PHONY : Sphere.o
+
+# target to build an object file
+Sphere.cpp.o:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.o
+.PHONY : Sphere.cpp.o
+
+Sphere.i: Sphere.cpp.i
+
+.PHONY : Sphere.i
+
+# target to preprocess a source file
+Sphere.cpp.i:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.i
+.PHONY : Sphere.cpp.i
+
+Sphere.s: Sphere.cpp.s
+
+.PHONY : Sphere.s
+
+# target to generate assembly for a file
+Sphere.cpp.s:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.s
+.PHONY : Sphere.cpp.s
+
+Vector3.o: Vector3.cpp.o
+
+.PHONY : Vector3.o
+
+# target to build an object file
+Vector3.cpp.o:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Vector3.cpp.o
+.PHONY : Vector3.cpp.o
+
+Vector3.i: Vector3.cpp.i
+
+.PHONY : Vector3.i
+
+# target to preprocess a source file
+Vector3.cpp.i:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Vector3.cpp.i
+.PHONY : Vector3.cpp.i
+
+Vector3.s: Vector3.cpp.s
+
+.PHONY : Vector3.s
+
+# target to generate assembly for a file
+Vector3.cpp.s:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Vector3.cpp.s
+.PHONY : Vector3.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ray_tracing_engine"
 	@echo "... edit_cache"
+	@echo "... Scene.o"
+	@echo "... Scene.i"
+	@echo "... Scene.s"
+	@echo "... Sphere.o"
+	@echo "... Sphere.i"
+	@echo "... Sphere.s"
+	@echo "... Vector3.o"
+	@echo "... Vector3.i"
+	@echo "... Vector3.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
