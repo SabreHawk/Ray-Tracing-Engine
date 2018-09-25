@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Camera.cpp
+Camera.h
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Camera.h
+
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Camera.h
+Vector3.h
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Vector3.h
+Ray.h
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Ray.h
+
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Object.h
 iostream
 -
@@ -65,6 +75,8 @@ Scene.h
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Scene.h
 Sphere.h
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Sphere.h
+Camera.h
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Camera.h
 
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/svpng.inc
 stdio.h

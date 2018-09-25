@@ -16,9 +16,9 @@ public:
 
     Sphere(const Vector3 &, double);
 
-    virtual bool hit(const Ray &, double, double, hitInfo &) const;
+    bool hit(const Ray &, double, double, hitInfo &) const override;
 
-    virtual void dispInfo();
+    void dispInfo() override;
 };
 
 

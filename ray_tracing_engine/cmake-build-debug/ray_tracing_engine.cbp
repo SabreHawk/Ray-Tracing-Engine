@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Camera.cpp">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Camera.h">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Object.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>

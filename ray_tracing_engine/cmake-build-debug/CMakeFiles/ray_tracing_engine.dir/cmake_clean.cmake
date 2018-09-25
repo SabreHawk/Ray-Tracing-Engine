@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ray_tracing_engine.dir/Scene.cpp.o"
   "CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.o"
   "CMakeFiles/ray_tracing_engine.dir/Vector3.cpp.o"
+  "CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o"
   "ray_tracing_engine.pdb"
   "ray_tracing_engine"
 )

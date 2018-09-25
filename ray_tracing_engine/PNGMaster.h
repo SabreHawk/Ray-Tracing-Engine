@@ -9,6 +9,7 @@
 
 #include <cstring>
 #include <iostream>
+
 using namespace std;
 
 
@@ -25,26 +26,24 @@ public:
         height = _h;
         width = _w;
         data = new unsigned char[_h * _w * dimension];
-        memset(data,0,_h*_w*dimension);
+        memset(data, 0, _h * _w * dimension);
     }
 
     void setPixel(int _x, int _y, int _r, int _g, int _b, int _a = 255) {
-        data[(_y * width + _x) * 4] = (unsigned char) _r;
-        data[(_y * width + _x) * 4 + 1] = (unsigned char) _g;
-        data[(_y * width + _x) * 4 + 2] = (unsigned char) _b;
-        data[(_y * width + _x) * 4 + 3] = (unsigned char) _a;
+        _y = height - _y - 1;
+        data[(_y * width + _x) * 4] = (unsigned char) std::min(_r, 255);
+        data[(_y * width + _x) * 4 + 1] = (unsigned char) std::min(_g, 255);
+        data[(_y * width + _x) * 4 + 2] = (unsigned char) std::min(_b, 255);
+        data[(_y * width + _x) * 4 + 3] = (unsigned char) std::min(_a, 255);
     }
 
     void genPNG(const char *_name) {
-     //   FILE *fp = fopen(_name, "wb");
-     //   unsigned char *tmp_p = data;
-     //   svpng(fp, width, height, data, 1);
-     //   fclose(fp);
+        FILE *fp = fopen(_name, "wb");
+        svpng(fp, width, height, data, 1);
+        fclose(fp);
+
     }
 
-    ~PNGMaster() {
-        delete[] data;
-    }
 };
 
 #endif

@@ -123,6 +123,33 @@ ray_tracing_engine/fast:
 	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/build
 .PHONY : ray_tracing_engine/fast
 
+Camera.o: Camera.cpp.o
+
+.PHONY : Camera.o
+
+# target to build an object file
+Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o
+.PHONY : Camera.cpp.o
+
+Camera.i: Camera.cpp.i
+
+.PHONY : Camera.i
+
+# target to preprocess a source file
+Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Camera.cpp.i
+.PHONY : Camera.cpp.i
+
+Camera.s: Camera.cpp.s
+
+.PHONY : Camera.s
+
+# target to generate assembly for a file
+Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Camera.cpp.s
+.PHONY : Camera.cpp.s
+
 Scene.o: Scene.cpp.o
 
 .PHONY : Scene.o
@@ -240,6 +267,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ray_tracing_engine"
 	@echo "... edit_cache"
+	@echo "... Camera.o"
+	@echo "... Camera.i"
+	@echo "... Camera.s"
 	@echo "... Scene.o"
 	@echo "... Scene.i"
 	@echo "... Scene.s"

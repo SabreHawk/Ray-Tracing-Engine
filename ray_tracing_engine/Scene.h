@@ -9,16 +9,19 @@
 #include "Object.h"
 #include <vector>
 
-class Scene {
+class Scene : public Object {
 private:
     std::vector<Object *> object_list;
     int object_num;
 public:
     Scene();
+
     bool addObject(Object *);
 
-};
+    bool hit(const Ray &, double, double, hitInfo &) const override;
 
+    void dispInfo() override;
+};
 
 
 #endif //RAY_TRACING_ENGINE_SCENE_H
