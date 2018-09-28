@@ -25,9 +25,9 @@ Vector3 color(const Ray &, const Scene &, int);
 void cal_color(const int &, const int &);
 
 
-unsigned int height = 108;
-unsigned int width = 192;
-int ray_num = 100  ;
+unsigned int height = 1080;
+unsigned int width = 1920;
+int ray_num = 1000  ;
 Vector3 lower_left_corner(-2.0, -1.0, -1.0);
 Vector3 vertical_vec(0.0, 2.0, 0.0);
 Vector3 horizontal_vec(4.0, 0, 0);
