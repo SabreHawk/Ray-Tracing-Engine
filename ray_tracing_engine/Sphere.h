@@ -14,11 +14,13 @@ private:
 public:
     Sphere();
 
-    Sphere(const Vector3 &, double);
+    Sphere(const Vector3 &, double,  Material *);
 
-    bool hit(const Ray &, double, double, hitInfo &) const override;
+    bool hit(const Ray &, double, double, HitInfo &) const override;
 
     void dispInfo() override;
+
+     Material *get_material() const;
 };
 
 

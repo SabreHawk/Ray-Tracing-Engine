@@ -7,6 +7,7 @@
 
 
 #include "Object.h"
+#include "HitInfo.h"
 #include <vector>
 
 class Scene : public Object {
@@ -18,7 +19,7 @@ public:
 
     bool addObject(Object *);
 
-    bool hit(const Ray &, double, double, hitInfo &) const override;
+    bool hit(const Ray &, double, double, HitInfo &) const override;
 
     void dispInfo() override;
 };

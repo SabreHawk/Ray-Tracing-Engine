@@ -150,6 +150,87 @@ Camera.cpp.s:
 	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Camera.cpp.s
 .PHONY : Camera.cpp.s
 
+Lambertian.o: Lambertian.cpp.o
+
+.PHONY : Lambertian.o
+
+# target to build an object file
+Lambertian.cpp.o:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o
+.PHONY : Lambertian.cpp.o
+
+Lambertian.i: Lambertian.cpp.i
+
+.PHONY : Lambertian.i
+
+# target to preprocess a source file
+Lambertian.cpp.i:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.i
+.PHONY : Lambertian.cpp.i
+
+Lambertian.s: Lambertian.cpp.s
+
+.PHONY : Lambertian.s
+
+# target to generate assembly for a file
+Lambertian.cpp.s:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.s
+.PHONY : Lambertian.cpp.s
+
+Material.o: Material.cpp.o
+
+.PHONY : Material.o
+
+# target to build an object file
+Material.cpp.o:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Material.cpp.o
+.PHONY : Material.cpp.o
+
+Material.i: Material.cpp.i
+
+.PHONY : Material.i
+
+# target to preprocess a source file
+Material.cpp.i:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Material.cpp.i
+.PHONY : Material.cpp.i
+
+Material.s: Material.cpp.s
+
+.PHONY : Material.s
+
+# target to generate assembly for a file
+Material.cpp.s:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Material.cpp.s
+.PHONY : Material.cpp.s
+
+Metal.o: Metal.cpp.o
+
+.PHONY : Metal.o
+
+# target to build an object file
+Metal.cpp.o:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o
+.PHONY : Metal.cpp.o
+
+Metal.i: Metal.cpp.i
+
+.PHONY : Metal.i
+
+# target to preprocess a source file
+Metal.cpp.i:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Metal.cpp.i
+.PHONY : Metal.cpp.i
+
+Metal.s: Metal.cpp.s
+
+.PHONY : Metal.s
+
+# target to generate assembly for a file
+Metal.cpp.s:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Metal.cpp.s
+.PHONY : Metal.cpp.s
+
 Scene.o: Scene.cpp.o
 
 .PHONY : Scene.o
@@ -270,6 +351,15 @@ help:
 	@echo "... Camera.o"
 	@echo "... Camera.i"
 	@echo "... Camera.s"
+	@echo "... Lambertian.o"
+	@echo "... Lambertian.i"
+	@echo "... Lambertian.s"
+	@echo "... Material.o"
+	@echo "... Material.i"
+	@echo "... Material.s"
+	@echo "... Metal.o"
+	@echo "... Metal.i"
+	@echo "... Metal.s"
 	@echo "... Scene.o"
 	@echo "... Scene.i"
 	@echo "... Scene.s"

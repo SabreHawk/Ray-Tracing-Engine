@@ -15,9 +15,9 @@ bool Scene::addObject(Object * _obj) {
 	return true;
 }
 
-bool Scene::hit(const Ray & _r, double _min, double _max, hitInfo & _info) const {
+bool Scene::hit(const Ray & _r, double _min, double _max, HitInfo & _info) const {
     double tmp_min = _max;
-    hitInfo tmp_info;
+    HitInfo tmp_info;
     bool is_hit = false;
     for(auto obj:this->object_list){
         if (obj->hit(_r,_min,tmp_min,tmp_info)){

@@ -59,7 +59,7 @@ public:
 
     inline double length() const;
 
-    inline Vector3 normalize();
+    inline Vector3 normalize() const;
 
 };
 
@@ -156,7 +156,7 @@ inline double Vector3::length() const {
     return sqrt(this->vec3[0] * this->vec3[0] + this->vec3[1] * this->vec3[1] + this->vec3[2] * this->vec3[2]);
 }
 
-inline Vector3 Vector3::normalize() {
+inline Vector3 Vector3::normalize() const{
     double tmp_len = this->length();
     Vector3 tmp_v = *this;
     for (double &data : tmp_v.vec3) {

@@ -20,7 +20,7 @@ public:
     }
     Ray(const Vector3 & _p,const Vector3 & _d){
         pos = _p;
-        dir = _d;
+        this->dir = _d.normalize();
     }
 
     Vector3 origin()  const{

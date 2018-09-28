@@ -177,13 +177,88 @@ CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o.provides: CMakeFiles/ray_tracing_
 CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o.provides.build: CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o
 
 
+CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o: CMakeFiles/ray_tracing_engine.dir/flags.make
+CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o: ../Lambertian.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o -c /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Lambertian.cpp
+
+CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Lambertian.cpp > CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.i
+
+CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Lambertian.cpp -o CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.s
+
+CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o.requires:
+
+.PHONY : CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o.requires
+
+CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o.provides: CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o.provides.build
+.PHONY : CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o.provides
+
+CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o.provides.build: CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o
+
+
+CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o: CMakeFiles/ray_tracing_engine.dir/flags.make
+CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o: ../Metal.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o -c /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Metal.cpp
+
+CMakeFiles/ray_tracing_engine.dir/Metal.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ray_tracing_engine.dir/Metal.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Metal.cpp > CMakeFiles/ray_tracing_engine.dir/Metal.cpp.i
+
+CMakeFiles/ray_tracing_engine.dir/Metal.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ray_tracing_engine.dir/Metal.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Metal.cpp -o CMakeFiles/ray_tracing_engine.dir/Metal.cpp.s
+
+CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o.requires:
+
+.PHONY : CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o.requires
+
+CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o.provides: CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o.provides.build
+.PHONY : CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o.provides
+
+CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o.provides.build: CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o
+
+
+CMakeFiles/ray_tracing_engine.dir/Material.cpp.o: CMakeFiles/ray_tracing_engine.dir/flags.make
+CMakeFiles/ray_tracing_engine.dir/Material.cpp.o: ../Material.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ray_tracing_engine.dir/Material.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ray_tracing_engine.dir/Material.cpp.o -c /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Material.cpp
+
+CMakeFiles/ray_tracing_engine.dir/Material.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ray_tracing_engine.dir/Material.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Material.cpp > CMakeFiles/ray_tracing_engine.dir/Material.cpp.i
+
+CMakeFiles/ray_tracing_engine.dir/Material.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ray_tracing_engine.dir/Material.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Material.cpp -o CMakeFiles/ray_tracing_engine.dir/Material.cpp.s
+
+CMakeFiles/ray_tracing_engine.dir/Material.cpp.o.requires:
+
+.PHONY : CMakeFiles/ray_tracing_engine.dir/Material.cpp.o.requires
+
+CMakeFiles/ray_tracing_engine.dir/Material.cpp.o.provides: CMakeFiles/ray_tracing_engine.dir/Material.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Material.cpp.o.provides.build
+.PHONY : CMakeFiles/ray_tracing_engine.dir/Material.cpp.o.provides
+
+CMakeFiles/ray_tracing_engine.dir/Material.cpp.o.provides.build: CMakeFiles/ray_tracing_engine.dir/Material.cpp.o
+
+
 # Object files for target ray_tracing_engine
 ray_tracing_engine_OBJECTS = \
 "CMakeFiles/ray_tracing_engine.dir/main.cpp.o" \
 "CMakeFiles/ray_tracing_engine.dir/Scene.cpp.o" \
 "CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.o" \
 "CMakeFiles/ray_tracing_engine.dir/Vector3.cpp.o" \
-"CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o"
+"CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o" \
+"CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o" \
+"CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o" \
+"CMakeFiles/ray_tracing_engine.dir/Material.cpp.o"
 
 # External object files for target ray_tracing_engine
 ray_tracing_engine_EXTERNAL_OBJECTS =
@@ -193,9 +268,12 @@ ray_tracing_engine: CMakeFiles/ray_tracing_engine.dir/Scene.cpp.o
 ray_tracing_engine: CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.o
 ray_tracing_engine: CMakeFiles/ray_tracing_engine.dir/Vector3.cpp.o
 ray_tracing_engine: CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o
+ray_tracing_engine: CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o
+ray_tracing_engine: CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o
+ray_tracing_engine: CMakeFiles/ray_tracing_engine.dir/Material.cpp.o
 ray_tracing_engine: CMakeFiles/ray_tracing_engine.dir/build.make
 ray_tracing_engine: CMakeFiles/ray_tracing_engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ray_tracing_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ray_tracing_engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ray_tracing_engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -208,6 +286,9 @@ CMakeFiles/ray_tracing_engine.dir/requires: CMakeFiles/ray_tracing_engine.dir/Sc
 CMakeFiles/ray_tracing_engine.dir/requires: CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.o.requires
 CMakeFiles/ray_tracing_engine.dir/requires: CMakeFiles/ray_tracing_engine.dir/Vector3.cpp.o.requires
 CMakeFiles/ray_tracing_engine.dir/requires: CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o.requires
+CMakeFiles/ray_tracing_engine.dir/requires: CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o.requires
+CMakeFiles/ray_tracing_engine.dir/requires: CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o.requires
+CMakeFiles/ray_tracing_engine.dir/requires: CMakeFiles/ray_tracing_engine.dir/Material.cpp.o.requires
 
 .PHONY : CMakeFiles/ray_tracing_engine.dir/requires
 
