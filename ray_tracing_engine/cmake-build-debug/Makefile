@@ -150,6 +150,33 @@ Camera.cpp.s:
 	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Camera.cpp.s
 .PHONY : Camera.cpp.s
 
+Dielectric.o: Dielectric.cpp.o
+
+.PHONY : Dielectric.o
+
+# target to build an object file
+Dielectric.cpp.o:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Dielectric.cpp.o
+.PHONY : Dielectric.cpp.o
+
+Dielectric.i: Dielectric.cpp.i
+
+.PHONY : Dielectric.i
+
+# target to preprocess a source file
+Dielectric.cpp.i:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Dielectric.cpp.i
+.PHONY : Dielectric.cpp.i
+
+Dielectric.s: Dielectric.cpp.s
+
+.PHONY : Dielectric.s
+
+# target to generate assembly for a file
+Dielectric.cpp.s:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Dielectric.cpp.s
+.PHONY : Dielectric.cpp.s
+
 Lambertian.o: Lambertian.cpp.o
 
 .PHONY : Lambertian.o
@@ -351,6 +378,9 @@ help:
 	@echo "... Camera.o"
 	@echo "... Camera.i"
 	@echo "... Camera.s"
+	@echo "... Dielectric.o"
+	@echo "... Dielectric.i"
+	@echo "... Dielectric.s"
 	@echo "... Lambertian.o"
 	@echo "... Lambertian.i"
 	@echo "... Lambertian.s"

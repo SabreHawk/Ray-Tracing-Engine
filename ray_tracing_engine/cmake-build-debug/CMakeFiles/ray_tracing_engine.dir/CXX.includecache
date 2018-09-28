@@ -16,6 +16,16 @@ Vector3.h
 Ray.h
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Ray.h
 
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Dielectric.cpp
+Dielectric.h
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Dielectric.h
+HitInfo.h
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/HitInfo.h
+
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Dielectric.h
+Material.h
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Material.h
+
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/HitInfo.h
 Vector3.h
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Vector3.h
@@ -137,6 +147,8 @@ Lambertian.h
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Lambertian.h
 Metal.h
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Metal.h
+Dielectric.h
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Dielectric.h
 
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/svpng.inc
 stdio.h

@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o"
   "CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o"
   "CMakeFiles/ray_tracing_engine.dir/Material.cpp.o"
+  "CMakeFiles/ray_tracing_engine.dir/Dielectric.cpp.o"
   "ray_tracing_engine.pdb"
   "ray_tracing_engine"
 )

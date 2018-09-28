@@ -90,6 +90,12 @@
 		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Camera.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Dielectric.cpp">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Dielectric.h">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/HitInfo.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>

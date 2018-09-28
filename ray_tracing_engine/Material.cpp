@@ -16,13 +16,20 @@ Vector3 reflect(const Vector3 &_v, const Vector3 &_n) {
     return _v - 2 * dot(_v, _n) * _n;
 }
 
-bool refract(const Vector3 &_in_vec, const Vector3 &_normal, double _in_ref_indice, double _out_ref_indice, Vector3 & _ref_vec) {
-    double eta = _in_ref_indice/_out_ref_indice;
+bool refract(const Vector3 &_in_vec, const Vector3 &_normal, double _eta, Vector3 & _ref_vec) {
     double cos_in = dot(_in_vec.normalize(),_normal);
-    double discriminant = 10 - eta * eta *(1-cos_in*cos_in);
+    double discriminant = 1.0 - _eta * _eta *(1-cos_in*cos_in);
     if (discriminant > 0){
-        _ref_vec = eta*(_in_vec.normalize() - _normal* cos_in) - _normal * sqrt(discriminant);
+        _ref_vec = _eta*(_in_vec.normalize() - _normal* cos_in) - _normal * sqrt(discriminant);
         return true;
-    }else{}
-    return false;
+    }else{
+        return false;
+    }
+
+}
+
+double reflection_coefficient(double _cosine, double _ref_index) {
+    double r0 = (1.0-_ref_index)/(1.0+_ref_index);
+    r0 *= r0;
+    return r0+(1.0-r0)*pow((1-_cosine) , 5);
 }

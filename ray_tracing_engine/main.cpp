@@ -14,6 +14,7 @@
 #include "HitInfo.h"
 #include "Lambertian.h"
 #include "Metal.h"
+#include "Dielectric.h"
 
 void render0();
 
@@ -24,9 +25,9 @@ Vector3 color(const Ray &, const Scene &, int);
 void cal_color(const int &, const int &);
 
 
-unsigned int height = 1080;
-unsigned int width = 1920;
-int ray_num = 1000;
+unsigned int height = 108;
+unsigned int width = 192;
+int ray_num = 100  ;
 Vector3 lower_left_corner(-2.0, -1.0, -1.0);
 Vector3 vertical_vec(0.0, 2.0, 0.0);
 Vector3 horizontal_vec(4.0, 0, 0);
@@ -47,7 +48,8 @@ void render1() {
     tmp_scene.addObject(new Sphere(Vector3(0, 0, -1), 0.5, new Lambertian(Vector3(0.8, 0.3, 0.3))));
     tmp_scene.addObject(new Sphere(Vector3(0, -100.5, -1), 100, new Lambertian(Vector3(0.8, 0.8, 0.0))));
     tmp_scene.addObject(new Sphere(Vector3(1, 0, -1), 0.5, new Metal(Vector3(0.8, 0.6, 0.2),0)));
-    tmp_scene.addObject(new Sphere(Vector3(-1, 0, -1), 0.5, new Metal(Vector3(0.8, 0.8, 0.8),1.0)));
+    tmp_scene.addObject(new Sphere(Vector3(-1, 0, -1), 0.5, new Dielectric(1.5)));
+    tmp_scene.addObject(new Sphere(Vector3(-1, 0, -1), -0.45, new Dielectric(1.5)));
 
     auto start = std::chrono::system_clock::now();
     for (int i = 0; i < height; ++i) {

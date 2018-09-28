@@ -6,6 +6,13 @@ CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o: ../Camera.h
 CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o: ../Ray.h
 CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o: ../Vector3.h
 
+CMakeFiles/ray_tracing_engine.dir/Dielectric.cpp.o: ../Dielectric.cpp
+CMakeFiles/ray_tracing_engine.dir/Dielectric.cpp.o: ../Dielectric.h
+CMakeFiles/ray_tracing_engine.dir/Dielectric.cpp.o: ../HitInfo.h
+CMakeFiles/ray_tracing_engine.dir/Dielectric.cpp.o: ../Material.h
+CMakeFiles/ray_tracing_engine.dir/Dielectric.cpp.o: ../Ray.h
+CMakeFiles/ray_tracing_engine.dir/Dielectric.cpp.o: ../Vector3.h
+
 CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o: ../HitInfo.h
 CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o: ../Lambertian.cpp
 CMakeFiles/ray_tracing_engine.dir/Lambertian.cpp.o: ../Lambertian.h
@@ -45,6 +52,7 @@ CMakeFiles/ray_tracing_engine.dir/Vector3.cpp.o: ../Vector3.cpp
 CMakeFiles/ray_tracing_engine.dir/Vector3.cpp.o: ../Vector3.h
 
 CMakeFiles/ray_tracing_engine.dir/main.cpp.o: ../Camera.h
+CMakeFiles/ray_tracing_engine.dir/main.cpp.o: ../Dielectric.h
 CMakeFiles/ray_tracing_engine.dir/main.cpp.o: ../HitInfo.h
 CMakeFiles/ray_tracing_engine.dir/main.cpp.o: ../Lambertian.h
 CMakeFiles/ray_tracing_engine.dir/main.cpp.o: ../Material.h

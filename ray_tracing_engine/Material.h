@@ -14,6 +14,7 @@ public:
 };
 
 Vector3 reflect(const Vector3& _v,const Vector3& _n);
-bool refract(const Vector3& _in_vec,const Vector3 & _normal,double _in_ref_indice,double _out_red_indice,double ,Vector3 &);
+bool refract(const Vector3& _in_vec,const Vector3 & _normal,double _eta,Vector3 &);
 Vector3 random_in_unit_sphere();
+double reflection_coefficient(double,double);
 #endif //RAY_TRACING_ENGINE_MATERIAL_H
