@@ -12,6 +12,17 @@ Vector3 random_in_unit_sphere() {
     return p;
 }
 
-Vector3 reflect(const Vector3& _v,const Vector3& _n){
-    return _v - 2 * dot(_v,_n) * _n;
+Vector3 reflect(const Vector3 &_v, const Vector3 &_n) {
+    return _v - 2 * dot(_v, _n) * _n;
+}
+
+bool refract(const Vector3 &_in_vec, const Vector3 &_normal, double _in_ref_indice, double _out_ref_indice, Vector3 & _ref_vec) {
+    double eta = _in_ref_indice/_out_ref_indice;
+    double cos_in = dot(_in_vec.normalize(),_normal);
+    double discriminant = 10 - eta * eta *(1-cos_in*cos_in);
+    if (discriminant > 0){
+        _ref_vec = eta*(_in_vec.normalize() - _normal* cos_in) - _normal * sqrt(discriminant);
+        return true;
+    }else{}
+    return false;
 }

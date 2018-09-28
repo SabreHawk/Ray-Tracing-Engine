@@ -20,4 +20,6 @@ public:
 };
 
 
+
+
 #endif //RAY_TRACING_ENGINE_HITINFO_H

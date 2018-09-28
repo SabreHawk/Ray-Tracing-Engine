@@ -11,8 +11,9 @@
 class Metal : public Material {
 private:
     Vector3 albedo;
+    double fuzz;
 public:
-    Metal(const Vector3 &);
+    Metal(const Vector3 &,const double &);
 
     bool scatter(const Ray &, const HitInfo &, Vector3 &, Ray &) const override;
 
