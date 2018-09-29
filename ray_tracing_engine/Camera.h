@@ -15,10 +15,15 @@ private:
     Vector3 low_left_corner;
     Vector3 horizontal_vec;
     Vector3 vertical_vec;
+    Vector3 u;
+    Vector3 v;
+    Vector3 w;
 public:
     Camera();
-    Camera(const Vector3 &, const Vector3 &, const Vector3 &, const Vector3 &);
-    Ray gen_ray(double,double);
+
+    Camera(const Vector3 & _look_from,const Vector3 & _look_at,const Vector3 &_view_up,const double & _vfov,const double &_aspect);
+
+    Ray gen_ray(double, double);
 };
 
 
