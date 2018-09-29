@@ -4,6 +4,7 @@
 #include <functional>
 #include <thread>
 #include <pthread.h>
+#include <iomanip>
 #include "PNGMaster.h"
 #include "Vector3.h"
 #include "Ray.h"
@@ -24,10 +25,11 @@ Vector3 color(const Ray &, const Scene &, int);
 
 void cal_color(const int &, const int &);
 
+void random_scene();
 
-unsigned int height = 108;
-unsigned int width = 192;
-int ray_num = 100;
+unsigned int height = 4096;
+unsigned int width = 2160;
+int ray_num = 1000;
 Vector3 lower_left_corner(-2.0, -1.0, -1.0);
 Vector3 vertical_vec(0.0, 2.0, 0.0);
 Vector3 horizontal_vec(4.0, 0, 0);
@@ -37,10 +39,11 @@ Scene tmp_scene;
 //Camera tmp_camera(origin_vec, lower_left_corner, horizontal_vec, vertical_vec);
 //Camera Scene 02
 //Camera tmp_camera(90, double(width)/height);
-Vector3 look_from(3,3,2);
-Vector3 look_at(0,0,-1);
-float focus_dis = (look_from-look_at).length();
-Camera tmp_camera(Vector3(3,3,2),Vector3(0,0,-1),Vector3(0,1,0),20,float(width)/float(height),2.0,focus_dis);
+Vector3 look_from(13, 2, 3);
+Vector3 look_at(0, 0, 0);
+float focus_dis = (look_from - look_at).length();
+Camera tmp_camera(look_from, look_at, Vector3(0, 1, 0), 20, float(width) / float(height), 0.1,
+                  10);
 PNGMaster tmp_pic(height, width);
 
 int main() {
@@ -50,23 +53,55 @@ int main() {
     return 0;
 }
 
+void random_scene() {
+    tmp_scene.addObject(new Sphere(Vector3(0, -1000, 0), 1000, new Lambertian(Vector3(0.5, 0.5, 0.5))));
+    for (int a = -11; a < 11; ++a) {
+        for (int b = -11; b < 11; ++b) {
+            float material_probability = drand48();
+            Vector3 tmp_center(a + 0.9 * drand48(), 0.2, b + 0.9 * drand48());
+            if ((tmp_center - Vector3(4, 0.2, 0)).length() > 0.9) {
+                if (material_probability < 0.8) {
+                    tmp_scene.addObject(new Sphere(tmp_center, 0.2, new Lambertian(
+                            Vector3(drand48() * drand48(), drand48() * drand48(), drand48() * drand48()))));
+                } else if (material_probability < 0.95) {
+                    tmp_scene.addObject(new Sphere(tmp_center, 0.2, new Metal(
+                            Vector3(0.5 * (1 + drand48()), 0.5 * (1 + drand48()), 0.5 * (1 + drand48())),
+                            0.5 * drand48())));
+                } else {
+                    tmp_scene.addObject(new Sphere(tmp_center, 0.2, new Dielectric(1.5)));
+                }
+            }
+        }
+    }
+    tmp_scene.addObject(new Sphere(Vector3(0, 1, 0), 1.0, new Dielectric(1.5)));
+    tmp_scene.addObject(new Sphere(Vector3(-4, 1, 0), 1.0, new Lambertian(Vector3(0.4, 0.2, 0.1))));
+    tmp_scene.addObject(new Sphere(Vector3(4, 1, 0), 1.0, new Metal(Vector3(0.7, 0.6, 0.5), 0.0)));
+}
+
 void render1() {
 //    Scene 01
-    tmp_scene.addObject(new Sphere(Vector3(0, 0, -1), 0.5, new Lambertian(Vector3(0.8, 0.3, 0.3))));
-    tmp_scene.addObject(new Sphere(Vector3(0, -100.5, -1), 100, new Lambertian(Vector3(0.8, 0.8, 0.0))));
-    tmp_scene.addObject(new Sphere(Vector3(1, 0, -1), 0.5, new Metal(Vector3(0.8, 0.6, 0.2),0)));
-    tmp_scene.addObject(new Sphere(Vector3(-1, 0, -1), 0.5, new Dielectric(1.5)));
-    tmp_scene.addObject(new Sphere(Vector3(-1, 0, -1), -0.45, new Dielectric(1.5)));
+//    tmp_scene.addObject(new Sphere(Vector3(0, 0, -1), 0.5, new Lambertian(Vector3(0.8, 0.3, 0.3))));
+//    tmp_scene.addObject(new Sphere(Vector3(0, -100.5, -1), 100, new Lambertian(Vector3(0.8, 0.8, 0.0))));
+//    tmp_scene.addObject(new Sphere(Vector3(1, 0, -1), 0.5, new Metal(Vector3(0.8, 0.6, 0.2), 0)));
+//    tmp_scene.addObject(new Sphere(Vector3(-1, 0, -1), 0.5, new Dielectric(1.5)));
+//    tmp_scene.addObject(new Sphere(Vector3(-1, 0, -1), -0.45, new Dielectric(1.5)));
     //Scene02 - Test Camera
 //    double r = cos(M_PI/4);
 //    tmp_scene.addObject(new Sphere(Vector3(-r,0,-1),r,new Lambertian(Vector3(0,0,1))));
 //    tmp_scene.addObject(new Sphere(Vector3(r,0,-1),r,new Lambertian(Vector3(1,0,0))));
+    random_scene();
 
     auto start = std::chrono::system_clock::now();
+    auto end = std::chrono::system_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
     for (int i = 0; i < height; ++i) {
         if (i % 2 == 0) {
             cout << flush << '\r';
             printf("%.2lf%%", i * 100.0 / height);
+            end = std::chrono::system_clock::now();
+            duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+            cout << "    "<<(double) duration.count() / std::chrono::microseconds::period::den << 's';
+
         }
         for (int j = 0; j < (int) width; ++j) {
             Vector3 total_color(0, 0, 0);
@@ -77,13 +112,24 @@ void render1() {
         }
 
     }
-    auto end = std::chrono::system_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+    end = std::chrono::system_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
     std::cout << flush << '\r' << "Render Completed - Time Consumed :"
               << (double) duration.count() / std::chrono::microseconds::period::den << 's' << endl;
     std::cout << "Generating Picture ...";
-    tmp_pic.genPNG("test.png");
+    auto t = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+    std::stringstream ss;
+    ss << std::put_time(std::localtime(&t), "%F %T");
+    std::string str = ss.str();
+    char tmp_name[100];
+
+    strcpy(tmp_name, ss.str().c_str());
+    strcat(tmp_name, ".png");
+    tmp_name[13] = '-';
+    tmp_name[16] = '-';
+    tmp_pic.genPNG(tmp_name);
     std::cout << flush << '\r' << "Picture Generated Successfully" << endl;
+
 }
 
 void cal_color(const int &_i, const int &_j) {

@@ -129,6 +129,8 @@ thread
 -
 pthread.h
 -
+iomanip
+-
 PNGMaster.h
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/PNGMaster.h
 Vector3.h
