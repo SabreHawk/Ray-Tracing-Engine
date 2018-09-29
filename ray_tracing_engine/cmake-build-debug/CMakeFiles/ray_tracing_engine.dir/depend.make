@@ -3,6 +3,7 @@
 
 CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o: ../Camera.cpp
 CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o: ../Camera.h
+CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o: ../Material.h
 CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o: ../Ray.h
 CMakeFiles/ray_tracing_engine.dir/Camera.cpp.o: ../Vector3.h
 

@@ -8,7 +8,7 @@
 
 #include "Vector3.h"
 #include "Ray.h"
-
+#include "Material.h"
 class Camera {
 private:
     Vector3 origin;
@@ -18,10 +18,11 @@ private:
     Vector3 u;
     Vector3 v;
     Vector3 w;
+    double aperture;
 public:
     Camera();
 
-    Camera(const Vector3 & _look_from,const Vector3 & _look_at,const Vector3 &_view_up,const double & _vfov,const double &_aspect);
+    Camera(const Vector3 & _look_from,const Vector3 & _look_at,const Vector3 &_view_up,const double & _vfov,const double &_aspect,const double & _aperture,const double & _focus_dist);
 
     Ray gen_ray(double, double);
 };

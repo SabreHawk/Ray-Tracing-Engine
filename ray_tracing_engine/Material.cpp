@@ -12,6 +12,13 @@ Vector3 random_in_unit_sphere() {
     return p;
 }
 
+Vector3 random_in_unit_disk(){
+    Vector3 p;
+    do{
+        p = 2.0 * Vector3(drand48(),drand48(),0) - Vector3(1,1,0);
+    }while(p.length() >= 1.0);
+    return p;
+}
 Vector3 reflect(const Vector3 &_v, const Vector3 &_n) {
     return _v - 2 * dot(_v, _n) * _n;
 }
