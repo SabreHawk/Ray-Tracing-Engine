@@ -131,6 +131,8 @@ pthread.h
 -
 iomanip
 -
+cfloat
+-
 PNGMaster.h
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/PNGMaster.h
 Vector3.h
@@ -153,6 +155,10 @@ Metal.h
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Metal.h
 Dielectric.h
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Dielectric.h
+limits.h
+/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/limits.h
+cfloat
+-
 
 /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/svpng.inc
 stdio.h

@@ -5,6 +5,7 @@
 #include <thread>
 #include <pthread.h>
 #include <iomanip>
+#include <cfloat>
 #include "PNGMaster.h"
 #include "Vector3.h"
 #include "Ray.h"
@@ -16,7 +17,8 @@
 #include "Lambertian.h"
 #include "Metal.h"
 #include "Dielectric.h"
-
+#include "limits.h"
+#include <cfloat>
 void render0();
 
 void render1();
@@ -27,8 +29,8 @@ void cal_color(const int &, const int &);
 
 void random_scene();
 
-unsigned int height = 4096;
-unsigned int width = 2160;
+unsigned int height = 1080;
+unsigned int width = 1920;
 int ray_num = 1000;
 Vector3 lower_left_corner(-2.0, -1.0, -1.0);
 Vector3 vertical_vec(0.0, 2.0, 0.0);
@@ -57,7 +59,7 @@ void random_scene() {
     tmp_scene.addObject(new Sphere(Vector3(0, -1000, 0), 1000, new Lambertian(Vector3(0.5, 0.5, 0.5))));
     for (int a = -11; a < 11; ++a) {
         for (int b = -11; b < 11; ++b) {
-            float material_probability = drand48();
+            double material_probability = drand48();
             Vector3 tmp_center(a + 0.9 * drand48(), 0.2, b + 0.9 * drand48());
             if ((tmp_center - Vector3(4, 0.2, 0)).length() > 0.9) {
                 if (material_probability < 0.8) {
@@ -153,7 +155,7 @@ void cal_color(const int &_i, const int &_j) {
 
 Vector3 color(const Ray &_r, const Scene &_s, int _d) {
     HitInfo tmp_info;
-    if (_s.hit(_r, 0.001, MAXFLOAT, tmp_info)) {//if hit object
+    if (_s.hit(_r, 0.001, DBL_MAX, tmp_info)) {//if hit object
         Ray scatter_ray;
         Vector3 attenuation_vec;
         if (_d < 50 && tmp_info.material_ptr->scatter(_r, tmp_info, attenuation_vec, scatter_ray)) {
