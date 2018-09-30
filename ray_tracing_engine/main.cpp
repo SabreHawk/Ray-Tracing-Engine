@@ -102,7 +102,7 @@ void render1() {
             printf("%.2lf%%", i * 100.0 / height);
             end = std::chrono::system_clock::now();
             duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
-            cout << "    "<<(double) duration.count() / std::chrono::microseconds::period::den << 's';
+            cout << "    "<<(double) duration.count() / std::chrono::microseconds::period::den /60<< "min";
 
         }
         for (int j = 0; j < (int) width; ++j) {
@@ -117,7 +117,7 @@ void render1() {
     end = std::chrono::system_clock::now();
     duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
     std::cout << flush << '\r' << "Render Completed - Time Consumed :"
-              << (double) duration.count() / std::chrono::microseconds::period::den << 's' << endl;
+              << (double) duration.count() / std::chrono::microseconds::period::den/60 << "min" << endl;
     std::cout << "Generating Picture ...";
     auto t = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     std::stringstream ss;
