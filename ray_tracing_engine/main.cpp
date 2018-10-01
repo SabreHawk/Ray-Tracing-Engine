@@ -29,9 +29,9 @@ void cal_color(const int &, const int &);
 
 void random_scene();
 
-unsigned int height = 1080;
-unsigned int width = 1920;
-int ray_num = 1000;
+unsigned int height = 4096;
+unsigned int width = 2160;
+int ray_num = 100;
 Vector3 lower_left_corner(-2.0, -1.0, -1.0);
 Vector3 vertical_vec(0.0, 2.0, 0.0);
 Vector3 horizontal_vec(4.0, 0, 0);
