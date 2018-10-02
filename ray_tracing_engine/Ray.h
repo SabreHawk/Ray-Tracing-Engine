@@ -37,7 +37,7 @@ public:
         return pos + _t * dir;
     }
 
-    double time() const{
+    double get_time() const{
         return this->time;
     }
 };

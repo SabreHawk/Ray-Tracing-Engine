@@ -29,8 +29,8 @@ void cal_color(const int &, const int &);
 
 void random_scene();
 
-unsigned int height = 2160;
-unsigned int width = 4096;
+unsigned int height = 108;
+unsigned int width = 192;
 int ray_num = 10;
 Vector3 lower_left_corner(-2.0, -1.0, -1.0);
 Vector3 vertical_vec(0.0, 2.0, 0.0);
@@ -45,7 +45,7 @@ Vector3 look_from(13, 2, 3);
 Vector3 look_at(0, 0, 0);
 float focus_dis = (look_from - look_at).length();
 Camera tmp_camera(look_from, look_at, Vector3(0, 1, 0), 20, float(width) / float(height), 0.1,
-                  10);
+                  10,0,1.0);
 PNGMaster tmp_pic(height, width);
 
 int main() {
@@ -63,8 +63,11 @@ void random_scene() {
             Vector3 tmp_center(a + 0.9 * drand48(), 0.2, b + 0.9 * drand48());
             if ((tmp_center - Vector3(4, 0.2, 0)).length() > 0.9) {
                 if (material_probability < 0.8) {
-                    tmp_scene.addObject(new Sphere(tmp_center, 0.2, new Lambertian(
-                            Vector3(drand48() * drand48(), drand48() * drand48(), drand48() * drand48()))));
+                    Sphere * tmp_sphere = new Sphere(tmp_center, 0.2, new Lambertian(
+                    Vector3(drand48() * drand48(), drand48() * drand48(), drand48() * drand48())));
+                    tmp_sphere->add_node(tmp_center,0);
+                    tmp_sphere->add_node(tmp_center+Vector3(0,0.5*drand48(),0),1.0);
+                    tmp_scene.addObject(tmp_sphere);
                 } else if (material_probability < 0.95) {
                     tmp_scene.addObject(new Sphere(tmp_center, 0.2, new Metal(
                             Vector3(0.5 * (1 + drand48()), 0.5 * (1 + drand48()), 0.5 * (1 + drand48())),
@@ -102,8 +105,8 @@ void render1() {
             printf("%.2lf%%", i * 100.0 / height);
             end = std::chrono::system_clock::now();
             duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
-            cout << "    "<<(double) duration.count() / std::chrono::microseconds::period::den /60<< "min";
-
+            printf("\t%.2f min",(double) duration.count() / std::chrono::microseconds::period::den /60);
+            printf("\tEstimated Time : %.2f min",(double)(height-i)/i*(double) duration.count() / std::chrono::microseconds::period::den /60);
         }
         for (int j = 0; j < (int) width; ++j) {
             Vector3 total_color(0, 0, 0);
