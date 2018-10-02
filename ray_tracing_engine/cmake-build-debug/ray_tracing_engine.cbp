@@ -117,6 +117,12 @@
 		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Metal.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Movement.cpp">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Movement.h">
+			<Option target="ray_tracing_engine"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Object.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>

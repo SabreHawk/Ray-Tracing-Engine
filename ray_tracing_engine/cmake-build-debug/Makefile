@@ -258,6 +258,33 @@ Metal.cpp.s:
 	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Metal.cpp.s
 .PHONY : Metal.cpp.s
 
+Movement.o: Movement.cpp.o
+
+.PHONY : Movement.o
+
+# target to build an object file
+Movement.cpp.o:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Movement.cpp.o
+.PHONY : Movement.cpp.o
+
+Movement.i: Movement.cpp.i
+
+.PHONY : Movement.i
+
+# target to preprocess a source file
+Movement.cpp.i:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Movement.cpp.i
+.PHONY : Movement.cpp.i
+
+Movement.s: Movement.cpp.s
+
+.PHONY : Movement.s
+
+# target to generate assembly for a file
+Movement.cpp.s:
+	$(MAKE) -f CMakeFiles/ray_tracing_engine.dir/build.make CMakeFiles/ray_tracing_engine.dir/Movement.cpp.s
+.PHONY : Movement.cpp.s
+
 Scene.o: Scene.cpp.o
 
 .PHONY : Scene.o
@@ -390,6 +417,9 @@ help:
 	@echo "... Metal.o"
 	@echo "... Metal.i"
 	@echo "... Metal.s"
+	@echo "... Movement.o"
+	@echo "... Movement.i"
+	@echo "... Movement.s"
 	@echo "... Scene.o"
 	@echo "... Scene.i"
 	@echo "... Scene.s"
