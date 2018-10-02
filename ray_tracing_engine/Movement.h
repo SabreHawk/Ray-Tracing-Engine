@@ -9,11 +9,13 @@
 #include "Vector3.h"
 #include "Object.h"
 
-struct MovementNode {
+class MovementNode {
+public:
     Vector3 pos;
     double time;
 
-    MovementNode(const Vector3 &_pos, const double _time) {
+    MovementNode() = default;
+    MovementNode(const Vector3 &_pos, const double &_time) {
         pos = _pos;
         time = _time;
     }

@@ -22,7 +22,7 @@ bool Sphere::hit(const Ray &_r, double _min, double _max, HitInfo &_info) const 
         if (tmp > _min && tmp < _max) {
             _info.t = tmp;
             _info.pos = _r.targetPos(tmp);
-            _info.normal = (_info.pos - this->center)/this->radius;
+            _info.normal = (_info.pos - this->center) / this->radius;
             _info.material_ptr = this->material_ptr;
             return true;
         }
@@ -30,7 +30,7 @@ bool Sphere::hit(const Ray &_r, double _min, double _max, HitInfo &_info) const 
         if (tmp > _min && tmp < _max) {
             _info.t = tmp;
             _info.pos = _r.targetPos(_info.t);
-            _info.normal = (_info.pos - this->center)/this->radius;
+            _info.normal = (_info.pos - this->center) / this->radius;
             _info.material_ptr = this->material_ptr;
             return true;
         }
@@ -51,14 +51,16 @@ Material *Sphere::get_material() const {
 
 bool Sphere::displacement(const double &_time, Vector3 &_target_pos) const {
     MovementNode pre_node = this->node_list.front();
-    std::vector<MovementNode>::iterator node_itor;
-    for(node_itor = this->node_list.begin() + 1;node_itor!= this->node_list.end();++ node_itor){
-        if (pre_node.time <= _time && _time <= node_itor->time){
-            _target_pos = pre_node.pos + (_time-pre_node.time)/(node_itor->time-pre_node.time) * (node_itor->pos - pre_node.pos);
+    for (std::vector<MovementNode>::const_iterator node_itor = Movement::node_list.begin();
+         node_itor != this->node_list.end(); ++node_itor) {
+        if (pre_node.time <= _time && _time <= node_itor->time) {
+            _target_pos = pre_node.pos +
+                          (_time - pre_node.time) / (node_itor->time - pre_node.time) * (node_itor->pos - pre_node.pos);
             return true;
+        } else {
+            pre_node = *node_itor;
         }
+        return false;
     }
-    return false;
-}
 
-
+}   
