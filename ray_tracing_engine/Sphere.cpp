@@ -60,7 +60,7 @@ bool Sphere::displacement(const double &_time, Vector3 &_target_pos) const {
         } else {
             pre_node = *node_itor;
         }
-        return false;
     }
+    return false;
 
-}   
+}

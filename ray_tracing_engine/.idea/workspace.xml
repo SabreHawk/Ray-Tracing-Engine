@@ -36,7 +36,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="11205" />
+          <entry key="cpp" value="11208" />
           <entry key="h" value="3706" />
           <entry key="txt" value="111" />
         </counts>
@@ -44,7 +44,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="111" />
-          <entry key="ObjectiveC" value="14911" />
+          <entry key="ObjectiveC" value="14914" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -160,7 +160,7 @@
         <entry file="file://$PROJECT_DIR$/Sphere.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="466">
-              <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
         </entry>
@@ -304,12 +304,12 @@
       <workItem from="1538277244337" duration="26000" />
       <workItem from="1538294464913" duration="1612000" />
       <workItem from="1538418377443" duration="6760000" />
-      <workItem from="1538462142264" duration="2275000" />
+      <workItem from="1538462142264" duration="2892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97329000" />
+    <option name="totallyTimeSpent" value="97946000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="720" extended-state="6" />
@@ -556,7 +556,7 @@
     <entry file="file://$PROJECT_DIR$/Sphere.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
-          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
         </state>
       </provider>
     </entry>
