@@ -49,5 +49,16 @@ Material *Sphere::get_material() const {
     return this->material_ptr;
 }
 
+bool Sphere::displacement(const double &_time, Vector3 &_target_pos) const {
+    MovementNode pre_node = this->node_list.front();
+    std::vector<MovementNode>::iterator node_itor;
+    for(node_itor = this->node_list.begin() + 1;node_itor!= this->node_list.end();++ node_itor){
+        if (pre_node.time <= _time && _time <= node_itor->time){
+            _target_pos = pre_node.pos + (_time-pre_node.time)/(node_itor->time-pre_node.time) * (node_itor->pos - pre_node.pos);
+            return true;
+        }
+    }
+    return false;
+}
 
 

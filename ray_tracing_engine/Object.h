@@ -9,12 +9,16 @@
 #include "Ray.h"
 #include "Material.h"
 #include "HitInfo.h"
+
 class Object {
 protected:
-     Material * material_ptr;
+    Material *material_ptr;
 public:
-    virtual bool hit(const Ray &, double, double, HitInfo &) const=0;
+    virtual bool hit(const Ray &, double, double, HitInfo &) const = 0;
+
     virtual void dispInfo() = 0;
+
+
 };
 
 
