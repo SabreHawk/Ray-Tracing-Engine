@@ -33,6 +33,14 @@ CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o: ../Metal.h
 CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o: ../Ray.h
 CMakeFiles/ray_tracing_engine.dir/Metal.cpp.o: ../Vector3.h
 
+CMakeFiles/ray_tracing_engine.dir/Movement.cpp.o: ../HitInfo.h
+CMakeFiles/ray_tracing_engine.dir/Movement.cpp.o: ../Material.h
+CMakeFiles/ray_tracing_engine.dir/Movement.cpp.o: ../Movement.cpp
+CMakeFiles/ray_tracing_engine.dir/Movement.cpp.o: ../Movement.h
+CMakeFiles/ray_tracing_engine.dir/Movement.cpp.o: ../Object.h
+CMakeFiles/ray_tracing_engine.dir/Movement.cpp.o: ../Ray.h
+CMakeFiles/ray_tracing_engine.dir/Movement.cpp.o: ../Vector3.h
+
 CMakeFiles/ray_tracing_engine.dir/Scene.cpp.o: ../HitInfo.h
 CMakeFiles/ray_tracing_engine.dir/Scene.cpp.o: ../Material.h
 CMakeFiles/ray_tracing_engine.dir/Scene.cpp.o: ../Object.h
@@ -43,6 +51,7 @@ CMakeFiles/ray_tracing_engine.dir/Scene.cpp.o: ../Vector3.h
 
 CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.o: ../HitInfo.h
 CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.o: ../Material.h
+CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.o: ../Movement.h
 CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.o: ../Object.h
 CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.o: ../Ray.h
 CMakeFiles/ray_tracing_engine.dir/Sphere.cpp.o: ../Sphere.cpp
@@ -58,6 +67,7 @@ CMakeFiles/ray_tracing_engine.dir/main.cpp.o: ../HitInfo.h
 CMakeFiles/ray_tracing_engine.dir/main.cpp.o: ../Lambertian.h
 CMakeFiles/ray_tracing_engine.dir/main.cpp.o: ../Material.h
 CMakeFiles/ray_tracing_engine.dir/main.cpp.o: ../Metal.h
+CMakeFiles/ray_tracing_engine.dir/main.cpp.o: ../Movement.h
 CMakeFiles/ray_tracing_engine.dir/main.cpp.o: ../Object.h
 CMakeFiles/ray_tracing_engine.dir/main.cpp.o: ../PNGMaster.h
 CMakeFiles/ray_tracing_engine.dir/main.cpp.o: ../Ray.h
