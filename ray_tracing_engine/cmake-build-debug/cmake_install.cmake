@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine
+# Install script for directory: /home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

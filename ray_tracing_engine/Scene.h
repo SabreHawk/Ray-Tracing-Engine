@@ -22,6 +22,8 @@ public:
     bool hit(const Ray &, double, double, HitInfo &) const override;
 
     void dispInfo() override;
+
+    void clear();
 };
 
 

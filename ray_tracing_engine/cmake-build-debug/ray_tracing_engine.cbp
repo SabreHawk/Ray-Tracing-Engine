@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug"/>
+				<Option working_dir="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug"/>
+				<Option working_dir="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ray_tracing_engine">
-				<Option output="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/ray_tracing_engine" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug"/>
+				<Option output="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/ray_tracing_engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -44,15 +44,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 ray_tracing_engine"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 ray_tracing_engine"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ray_tracing_engine/fast">
-				<Option output="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/ray_tracing_engine" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug"/>
+				<Option output="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/ray_tracing_engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -67,90 +67,90 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 ray_tracing_engine/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 ray_tracing_engine/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug"/>
+				<Option working_dir="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Camera.cpp">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Camera.cpp">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Camera.h">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Camera.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Dielectric.cpp">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Dielectric.cpp">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Dielectric.h">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Dielectric.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/HitInfo.h">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/HitInfo.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Lambertian.cpp">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Lambertian.cpp">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Lambertian.h">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Lambertian.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Material.cpp">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Material.cpp">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Material.h">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Material.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Metal.cpp">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Metal.cpp">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Metal.h">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Metal.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Movement.cpp">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Movement.cpp">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Movement.h">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Movement.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Object.h">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Object.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Ray.h">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Ray.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Scene.cpp">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Scene.cpp">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Scene.h">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Scene.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Sphere.cpp">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Sphere.cpp">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Sphere.h">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Sphere.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Vector3.cpp">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Vector3.cpp">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Vector3.h">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/Vector3.h">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/main.cpp">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/main.cpp">
 			<Option target="ray_tracing_engine"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mySab/Documents/SourceCode/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/CMakeLists.txt">
+		<Unit filename="/home/zhiquan/Git-Repository/Ray-Tracing-Engine/ray_tracing_engine/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

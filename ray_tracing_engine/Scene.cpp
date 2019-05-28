@@ -36,3 +36,7 @@ void Scene::dispInfo() {
     }
 }
 
+void Scene::clear() {
+    this->object_list.clear();
+}
+
