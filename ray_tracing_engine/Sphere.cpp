@@ -23,8 +23,6 @@ bool Sphere::hit(const Ray &_r, double _min, double _max, HitInfo &_info) const 
     double discriminant = b * b - a * c;
     if (discriminant > 0.0) {
         double tmp = (-b - sqrt(discriminant)) / a;
-
-
         if (tmp > _min && tmp < _max) {
             _info.t = tmp;
             _info.pos = _r.targetPos(tmp);
@@ -40,7 +38,6 @@ bool Sphere::hit(const Ray &_r, double _min, double _max, HitInfo &_info) const 
             _info.material_ptr = this->material_ptr;
             return true;
         }
-
     }
     return false;
 }

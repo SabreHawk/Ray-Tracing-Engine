@@ -277,7 +277,7 @@ void cal_color(const int &_i, const int &_j)
         ;
     }
     tmp_color /= ray_num;
-    tmp_color = Vector3(sqrt(tmp_color.r()), sqrt(tmp_color.g()), sqrt(tmp_color.b()));
+    tmp_color = Vector3(sqrt(tmp_color.r()), sqrt(tmp_color.g()), sqrt(tmp_color.b()));//gamma corrected with gamma 2
     tmp_color *= 255.99;
     tmp_pic.setPixel(_j, _i, int(tmp_color.r()), int(tmp_color.g()),
                      int(tmp_color.b()));
