@@ -1,6 +1,9 @@
 #include "pngmaster.h"
 #include "ray.cuh"
+#include "scene.cuh"
+#include "shpere.cuh"
 #include "vector3.cuh"
+#include <float.h>
 #include <iostream>
 #include <time.h>
 // limited version of checkCudaErrors from helper_cuda.h in CUDA examples
@@ -17,15 +20,21 @@ void check_cuda(cudaError_t result, char const *const func,
   }
 }
 
-__device__ vector3 color(const ray &r) {
-  vector3 unit_direction = r.direction().normalize();
+__device__ vector3 color(const ray &_r, scene **_tmp_scene) {
+  hitinfo tmp_info;
+  if ((*_tmp_scene)->hit(_r, 0.0, FLT_MAX, tmp_info)) {
+    return 0.5 * vector3(tmp_info.normal.x() + 1.0f, tmp_info.normal.y() + 1.0f,
+                         tmp_info.normal.z() + 1.0f);
+  }
+
+  vector3 unit_direction = _r.direction().normalize();
   float t = 0.5f * (unit_direction.y() + 1.0f);
   return (1.0f - t) * vector3(1, 1, 1) + t * vector3(0.0, 0.0, 0.0);
 }
 
 __global__ void render(vector3 *fb, int max_x, int max_y,
                        vector3 lower_left_corner, vector3 horizontal,
-                       vector3 vertical, vector3 origin) {
+                       vector3 vertical, vector3 origin, scene **tmp_scene) {
   int i = threadIdx.x + blockIdx.x * blockDim.x;
   int j = threadIdx.y + blockIdx.y * blockDim.y;
   if ((i >= max_x) || (j >= max_y))
@@ -34,9 +43,16 @@ __global__ void render(vector3 *fb, int max_x, int max_y,
   float u = float(i) / float(max_x);
   float v = float(j) / float(max_y);
   ray tmp_r(origin, lower_left_corner + u * horizontal + v * vertical);
-  fb[pixel_index] = color(tmp_r);
+  fb[pixel_index] = color(tmp_r, tmp_scene);
 }
 
+__global__ void init_scene(object **objs, scene **tmp_scene) {
+  if (threadIdx.x == 0 && blockIdx.x == 0) {
+    *(objs) = new sphere(vector3(0.0f, 0.0f, -1.0f), 0.5f);
+    *(objs + 1) = new sphere(vector3(0.0f, -100.5f, -1.0f), 0.5f);
+    *tmp_scene = new scene(objs, 2);
+  }
+}
 int main() {
   int nx = 1200;
   int ny = 600;
@@ -53,6 +69,15 @@ int main() {
   vector3 *fb;
   checkCudaErrors(cudaMallocManaged((void **)&fb, fb_size));
 
+  // init scene
+  const int obj_nums = 2;
+  scene **d_tmp_scene;
+  checkCudaErrors(cudaMalloc((void **)&d_tmp_scene, sizeof(scene *)));
+  object **d_objs;
+  checkCudaErrors(cudaMalloc((void **)&d_objs, sizeof(object *) * obj_nums));
+  init_scene<<<1, 1>>>(d_objs, d_tmp_scene);
+  checkCudaErrors(cudaGetLastError());
+  checkCudaErrors(cudaDeviceSynchronize());
   clock_t start, stop;
   start = clock();
   // Render our buffer
@@ -60,7 +85,7 @@ int main() {
   dim3 threads(tx, ty);
   render<<<blocks, threads>>>(fb, nx, ny, vector3(-2.0f, -1.0f, -1.0f),
                               vector3(4.0f, 0.0f, 0.0f), vector3(0.0, 2.0, 0.0),
-                              vector3(0.0f, 0.0f, 0.0f));
+                              vector3(0.0f, 0.0f, 0.0f), d_tmp_scene);
   checkCudaErrors(cudaGetLastError());
   checkCudaErrors(cudaDeviceSynchronize());
   stop = clock();

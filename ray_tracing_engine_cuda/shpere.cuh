@@ -5,7 +5,8 @@
 #ifndef RAY_TRACING_ENGINE_SPHERE_H
 #define RAY_TRACING_ENGINE_SPHERE_H
 
-#include "Object.h"
+#include "hitinfo.cuh"
+#include "object.cuh"
 
 class sphere : public object {
 private:
@@ -15,39 +16,48 @@ private:
 public:
   sphere() = default;
 
-  __device__ sphere::sphere(const vector3 &_c, const float &_r);
+  __host__ __device__ sphere(const vector3 &_c, const float &_r);
 
-  __device__ bool hit(const Ray &, double, double, HitInfo &) const override;
+  __device__ bool hit(const ray &, const float &, const float &,
+                      hitinfo &) const override;
 
-  bool displacement(const double &_time, Vector3 &_target_pos) const override;
+  // bool displacement(const float &_time, vector3 &_target_pos) const override;
 
-  void dispInfo() override;
+  __host__ void disp_info() const override;
 };
-__device__ sphere::sphere(const vector3 &_c, const float &_r)
+__host__ __device__ sphere::sphere(const vector3 &_c, const float &_r)
     : center(_c), radius(_r) {}
-__device__ bool sphere::hit(const ray &r, float d_min, float d_max,
-                            hit_record &rec) const {
-  vec3 oc = r.origin() - center;
-  float a = dot(r.direction(), r.direction());
-  float b = dot(oc, r.direction());
-  float c = dot(oc, oc) - radius * radius;
+__device__ bool sphere::hit(const ray &_r, const float &_min, const float &_max,
+                            hitinfo &_info) const {
+  vector3 center_t = this->center;
+  // if (!this->displacement(_r.get_time(), center_t)) {
+  //   center_t = this->center;
+  // }
+  vector3 oc = _r.origin() - center_t;
+  float a = dot(_r.direction(), _r.direction());
+  float b = dot(oc, _r.direction());
+  float c = dot(oc, oc) - this->radius * this->radius;
   float discriminant = b * b - a * c;
-  if (discriminant > 0) {
+  if (discriminant > 0.0) {
     float tmp = (-b - sqrt(discriminant)) / a;
-    if (d_min < tmp && tmp < d_max) {
-      rec.dis = tmp;
-      rec.p = r.point_at_parameter(rec.dis);
-      rec.normal = (rec.p - center) / radius;
+    if (tmp > _min && tmp < _max) {
+      _info.dis = tmp;
+      _info.pos = _r.target_pos(tmp);
+      _info.normal = (_info.pos - center_t) / this->radius;
+      //_info.material_ptr = this->material_ptr;
       return true;
     }
     tmp = (-b + sqrt(discriminant)) / a;
-    if (d_min < tmp && tmp < d_max) {
-      rec.dis = tmp;
-      rec.p = r.target_pos(rec.dis);
-      rec.normal = (rec.p - center) / radius;
+    if (tmp > _min && tmp < _max) {
+      _info.dis = tmp;
+      _info.pos = _r.target_pos(_info.dis);
+      _info.normal = (_info.pos - center_t) / this->radius;
+      // _info.material_ptr = this->material_ptr;
       return true;
     }
   }
   return false;
 }
+
+__host__ void sphere::disp_info() const {}
 #endif // RAY_TRACING_ENGINE_SPHERE_H
