@@ -6,6 +6,7 @@
 #define MATRIXOPERATION_CPP_vector3_H
 
 #include <cmath>
+#include <curand_kernel.h>
 #include <iostream>
 
 class vector3 {
@@ -58,6 +59,8 @@ public:
   __host__ __device__ inline bool operator!=(const vector3 &);
 
   __host__ __device__ inline float length() const;
+
+  __host__ __device__ inline float squared_length() const;
 
   __host__ __device__ inline vector3 normalize() const;
 };
@@ -154,6 +157,10 @@ __host__ __device__ inline float vector3::length() const {
   return sqrt(this->vec3[0] * this->vec3[0] + this->vec3[1] * this->vec3[1] +
               this->vec3[2] * this->vec3[2]);
 }
+__host__ __device__ inline float vector3::squared_length() const {
+  return this->vec3[0] * this->vec3[0] + this->vec3[1] * this->vec3[1] +
+         this->vec3[2] * this->vec3[2];
+}
 
 __host__ __device__ inline vector3 vector3::normalize() const {
   float tmp_len = this->length();
@@ -236,4 +243,14 @@ __host__ __device__ inline vector3 operator/(const vector3 &_v0,
   return {_v0[0] / _d, _v0[1] / _d, _v0[2] / _d};
 }
 
+__device__ vector3 random_in_unit_sphere(curandState *local_rand_state) {
+  vector3 p;
+  do {
+    p = 2.0f * vector3(curand_uniform(local_rand_state),
+                       curand_uniform(local_rand_state),
+                       curand_uniform(local_rand_state)) -
+        vector3(1, 1, 1);
+  } while (p.squared_length() >= 1.0f);
+  return p;
+}
 #endif // MATRIXOPERATION_CPP_vector3_H

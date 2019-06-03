@@ -23,17 +23,30 @@ void check_cuda(cudaError_t result, char const *const func,
   }
 }
 
-__device__ vector3 color(const ray &_r, scene **_tmp_scene) {
-  hitinfo tmp_info;
-  if ((*_tmp_scene)->hit(_r, 0.0, FLT_MAX, tmp_info)) {
+#define RANDVEC3                                                               \
+  vector3(curand_uniform(local_rand_state), curand_uniform(local_rand_state),  \
+          curand_uniform(local_rand_state))
 
-    return 0.5 * vector3(tmp_info.normal.x() + 1.0f, tmp_info.normal.y() + 1.0f,
-                         tmp_info.normal.z() + 1.0f);
-  } else {
-    vector3 unit_direction = _r.direction().normalize();
-    float t = 0.5f * (unit_direction.y() + 1.0f);
-    return (1.0f - t) * vector3(1, 1, 1) + t * vector3(0.0, 0.0, 0.0);
+__device__ vector3 color(const ray &_r, scene **_tmp_scene,
+                         curandState *local_rand_state) {
+
+  ray cur_ray = _r;
+  float cur_attenuation = 1.0f;
+  for (int i = 0; i < 50; ++i) {
+    hitinfo tmp_info;
+    if ((*_tmp_scene)->hit(cur_ray, 0.001f, FLT_MAX, tmp_info)) {
+      vector3 target_pos_mins_intersected_pos =
+          tmp_info.normal + random_in_unit_sphere(local_rand_state);
+      cur_attenuation *= 0.5f;
+      cur_ray = ray(tmp_info.pos, target_pos_mins_intersected_pos);
+    } else {
+      vector3 unit_direction = _r.direction().normalize();
+      float t = 0.5f * (unit_direction.y() + 1.0f);
+      return cur_attenuation * (1.0f - t) * vector3(1, 1, 1) +
+             t * vector3(0.5f, 0.7f, 1.0f);
+    }
   }
+  return vector3(0.0f, 0.0f, 0.0f);
 }
 
 __global__ void render(vector3 *fb, int max_x, int max_y, int ray_num,
@@ -45,12 +58,13 @@ __global__ void render(vector3 *fb, int max_x, int max_y, int ray_num,
     return;
   int pixel_index = j * max_x + i;
   curandState local_rand_state = rand_state[pixel_index];
+
   vector3 tmp_col(0, 0, 0);
   for (int r = 0; r < ray_num; ++r) {
     float u = float(i + curand_uniform(&local_rand_state)) / float(max_x);
     float v = float(j + curand_uniform(&local_rand_state)) / float(max_y);
     ray tmp_r = (*tmp_cam)->gen_ray(u, v);
-    tmp_col += color(tmp_r, tmp_scene);
+    tmp_col += color(tmp_r, tmp_scene, &local_rand_state);
   }
   fb[pixel_index] = tmp_col / float(ray_num);
 }
@@ -61,12 +75,12 @@ __global__ void rand_init(int max_x, int max_y, curandState *rand_state) {
     return;
   int pixel_index = j * max_x + i;
   // Each thread gets same seed, a different sequence number, no offset
-  curand_init(1984, pixel_index, 0, &rand_state[pixel_index]);
+  curand_init(1984 + pixel_index, 0, 0, &rand_state[pixel_index]);
 }
 __global__ void init_scene(object **objs, scene **tmp_scene, camera **tmp_cam) {
   if (threadIdx.x == 0 && blockIdx.x == 0) {
     *(objs) = new sphere(vector3(0.0f, 0.0f, -1.0f), 0.5f);
-    *(objs + 1) = new sphere(vector3(0.0f, -100.5f, -1.0f), 0.5f);
+    *(objs + 1) = new sphere(vector3(0.0f, -100.5f, -1.0f), 100.0f);
     *(tmp_scene) = new scene(objs, 2);
     *(tmp_cam) =
         new camera(vector3(0.0f, 0.0f, 0.0f), vector3(-2.0f, -1.0f, -1.0f),
@@ -85,7 +99,7 @@ int main() {
   int ny = 600;
   int tx = 8;
   int ty = 8;
-  int ray_num = 5;
+  int ray_num = 100;
   std::cerr << "Rendering a " << nx << "x" << ny << " image ";
   std::cerr << "in " << tx << "x" << ty << " blocks.\n";
 
