@@ -1,10 +1,13 @@
+#include "camera.cuh"
 #include "pngmaster.h"
 #include "ray.cuh"
 #include "scene.cuh"
 #include "shpere.cuh"
 #include "vector3.cuh"
+#include <curand_kernel.h>
 #include <float.h>
 #include <iostream>
+#include <stdio.h>
 #include <time.h>
 // limited version of checkCudaErrors from helper_cuda.h in CUDA examples
 #define checkCudaErrors(val) check_cuda((val), #val, __FILE__, __LINE__)
@@ -32,33 +35,57 @@ __device__ vector3 color(const ray &_r, scene **_tmp_scene) {
   return (1.0f - t) * vector3(1, 1, 1) + t * vector3(0.0, 0.0, 0.0);
 }
 
-__global__ void render(vector3 *fb, int max_x, int max_y,
-                       vector3 lower_left_corner, vector3 horizontal,
-                       vector3 vertical, vector3 origin, scene **tmp_scene) {
+__global__ void render(vector3 *fb, int max_x, int max_y, int ray_num,
+                       camera **tmp_cam, scene **tmp_scene,
+                       curandState *rand_state) {
   int i = threadIdx.x + blockIdx.x * blockDim.x;
   int j = threadIdx.y + blockIdx.y * blockDim.y;
   if ((i >= max_x) || (j >= max_y))
     return;
   int pixel_index = j * max_x + i;
-  float u = float(i) / float(max_x);
-  float v = float(j) / float(max_y);
-  ray tmp_r(origin, lower_left_corner + u * horizontal + v * vertical);
-  fb[pixel_index] = color(tmp_r, tmp_scene);
+  curand_init(1984, pixel_index, 0, &rand_state[pixel_index]);
+  printf("1");
+  __syncthreads();
+  printf("2");
+  curandState local_rand_state = rand_state[pixel_index];
+  vector3 tmp_col(0, 0, 0);
+  printf("e");
+  for (int r = 0; r < ray_num; ++r) {
+    printf("3");
+    float u = float(i + curand_uniform(&local_rand_state)) / float(max_x);
+    float v = float(j + curand_uniform(&local_rand_state)) / float(max_y);
+    printf("4");
+    ray tmp_r = (*tmp_cam)->gen_ray(u, v);
+    tmp_col += color(tmp_r, tmp_scene);
+    printf("7");
+  }
+  printf("0");
+  fb[pixel_index] = tmp_col / float(ray_num);
 }
 
-__global__ void init_scene(object **objs, scene **tmp_scene) {
+__global__ void init_scene(object **objs, scene **tmp_scene, camera **tmp_cam) {
   if (threadIdx.x == 0 && blockIdx.x == 0) {
     *(objs) = new sphere(vector3(0.0f, 0.0f, -1.0f), 0.5f);
     *(objs + 1) = new sphere(vector3(0.0f, -100.5f, -1.0f), 0.5f);
-    *tmp_scene = new scene(objs, 2);
+    *(tmp_scene) = new scene(objs, 2);
+    *(tmp_cam) =
+        new camera(vector3(0.0f, 0.0f, 0.0f), vector3(-2.0f, -1.0f, -1.0f),
+                   vector3(4.0f, 0.0f, 0.0f), vector3(0.0f, 2.0f, 0.0f));
   }
+}
+__global__ void free_scene(object **objs, scene **tmp_scene,
+                           camera **d_camera) {
+  delete *(objs);
+  delete *(objs + 1);
+  delete *(tmp_scene);
+  delete *(d_camera);
 }
 int main() {
   int nx = 1200;
   int ny = 600;
   int tx = 8;
   int ty = 8;
-
+  int ray_num = 5;
   std::cerr << "Rendering a " << nx << "x" << ny << " image ";
   std::cerr << "in " << tx << "x" << ty << " blocks.\n";
 
@@ -75,7 +102,14 @@ int main() {
   checkCudaErrors(cudaMalloc((void **)&d_tmp_scene, sizeof(scene *)));
   object **d_objs;
   checkCudaErrors(cudaMalloc((void **)&d_objs, sizeof(object *) * obj_nums));
-  init_scene<<<1, 1>>>(d_objs, d_tmp_scene);
+  curandState *d_rand_state;
+  checkCudaErrors(
+      cudaMalloc((void **)&d_rand_state, num_pixels * sizeof(curandState)));
+  camera **d_tmp_cam;
+
+  checkCudaErrors(cudaMalloc((void **)&d_tmp_cam, sizeof(camera *)));
+  init_scene<<<1, 1>>>(d_objs, d_tmp_scene, d_tmp_cam);
+
   checkCudaErrors(cudaGetLastError());
   checkCudaErrors(cudaDeviceSynchronize());
   clock_t start, stop;
@@ -83,9 +117,8 @@ int main() {
   // Render our buffer
   dim3 blocks(nx / tx + 1, ny / ty + 1);
   dim3 threads(tx, ty);
-  render<<<blocks, threads>>>(fb, nx, ny, vector3(-2.0f, -1.0f, -1.0f),
-                              vector3(4.0f, 0.0f, 0.0f), vector3(0.0, 2.0, 0.0),
-                              vector3(0.0f, 0.0f, 0.0f), d_tmp_scene);
+  render<<<blocks, threads>>>(fb, nx, ny, ray_num, d_tmp_cam, d_tmp_scene,
+                              d_rand_state);
   checkCudaErrors(cudaGetLastError());
   checkCudaErrors(cudaDeviceSynchronize());
   stop = clock();
@@ -105,6 +138,13 @@ int main() {
   string file_name = "test" + std::to_string(timer_seconds) + ".png";
   myImage.output(file_name.c_str());
   std::cerr << "render finished" << std::endl;
-
+  // free memory
+  checkCudaErrors(cudaDeviceSynchronize());
+  free_scene<<<1, 1>>>(d_objs, d_tmp_scene, d_tmp_cam);
+  checkCudaErrors(cudaGetLastError());
+  checkCudaErrors(cudaFree(d_objs));
+  checkCudaErrors(cudaFree(d_tmp_scene));
   checkCudaErrors(cudaFree(fb));
+  // useful for cuda-memcheck --leak-check full
+  cudaDeviceReset();
 }
