@@ -26,13 +26,14 @@ void check_cuda(cudaError_t result, char const *const func,
 __device__ vector3 color(const ray &_r, scene **_tmp_scene) {
   hitinfo tmp_info;
   if ((*_tmp_scene)->hit(_r, 0.0, FLT_MAX, tmp_info)) {
+
     return 0.5 * vector3(tmp_info.normal.x() + 1.0f, tmp_info.normal.y() + 1.0f,
                          tmp_info.normal.z() + 1.0f);
+  } else {
+    vector3 unit_direction = _r.direction().normalize();
+    float t = 0.5f * (unit_direction.y() + 1.0f);
+    return (1.0f - t) * vector3(1, 1, 1) + t * vector3(0.0, 0.0, 0.0);
   }
-
-  vector3 unit_direction = _r.direction().normalize();
-  float t = 0.5f * (unit_direction.y() + 1.0f);
-  return (1.0f - t) * vector3(1, 1, 1) + t * vector3(0.0, 0.0, 0.0);
 }
 
 __global__ void render(vector3 *fb, int max_x, int max_y, int ray_num,
@@ -43,26 +44,25 @@ __global__ void render(vector3 *fb, int max_x, int max_y, int ray_num,
   if ((i >= max_x) || (j >= max_y))
     return;
   int pixel_index = j * max_x + i;
-  curand_init(1984, pixel_index, 0, &rand_state[pixel_index]);
-  printf("1");
-  __syncthreads();
-  printf("2");
   curandState local_rand_state = rand_state[pixel_index];
   vector3 tmp_col(0, 0, 0);
-  printf("e");
   for (int r = 0; r < ray_num; ++r) {
-    printf("3");
     float u = float(i + curand_uniform(&local_rand_state)) / float(max_x);
     float v = float(j + curand_uniform(&local_rand_state)) / float(max_y);
-    printf("4");
     ray tmp_r = (*tmp_cam)->gen_ray(u, v);
     tmp_col += color(tmp_r, tmp_scene);
-    printf("7");
   }
-  printf("0");
   fb[pixel_index] = tmp_col / float(ray_num);
 }
-
+__global__ void rand_init(int max_x, int max_y, curandState *rand_state) {
+  int i = threadIdx.x + blockIdx.x * blockDim.x;
+  int j = threadIdx.y + blockIdx.y * blockDim.y;
+  if ((i >= max_x) || (j >= max_y))
+    return;
+  int pixel_index = j * max_x + i;
+  // Each thread gets same seed, a different sequence number, no offset
+  curand_init(1984, pixel_index, 0, &rand_state[pixel_index]);
+}
 __global__ void init_scene(object **objs, scene **tmp_scene, camera **tmp_cam) {
   if (threadIdx.x == 0 && blockIdx.x == 0) {
     *(objs) = new sphere(vector3(0.0f, 0.0f, -1.0f), 0.5f);
@@ -106,7 +106,6 @@ int main() {
   checkCudaErrors(
       cudaMalloc((void **)&d_rand_state, num_pixels * sizeof(curandState)));
   camera **d_tmp_cam;
-
   checkCudaErrors(cudaMalloc((void **)&d_tmp_cam, sizeof(camera *)));
   init_scene<<<1, 1>>>(d_objs, d_tmp_scene, d_tmp_cam);
 
@@ -117,6 +116,8 @@ int main() {
   // Render our buffer
   dim3 blocks(nx / tx + 1, ny / ty + 1);
   dim3 threads(tx, ty);
+  rand_init<<<blocks, threads>>>(nx, ny, d_rand_state);
+
   render<<<blocks, threads>>>(fb, nx, ny, ray_num, d_tmp_cam, d_tmp_scene,
                               d_rand_state);
   checkCudaErrors(cudaGetLastError());

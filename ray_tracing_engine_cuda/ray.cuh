@@ -8,11 +8,10 @@
 
 class ray {
 private:
+public:
   vector3 pos;
   vector3 dir;
   double time;
-
-public:
   ray() = default;
   __device__ ray(double _p0, double _p1, double _p2, double _d0, double _d1,
                  double _d2, double _time) {

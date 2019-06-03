@@ -7,6 +7,7 @@
 
 #include "hitinfo.cuh"
 #include "object.cuh"
+#include "stdio.h"
 #include <iostream>
 
 class scene : public object {
@@ -27,14 +28,15 @@ public:
 
   __host__ __device__ void clear();
 };
+
+__host__ __device__ scene::scene(const unsigned int &_l_num)
+    : object_num(0), list_len(_l_num) {
+  object_list = new object *[_l_num];
+}
 __host__ __device__ scene::scene(object **_objs, int _len) {
   object_list = _objs;
   object_num = _len;
   list_len = _len;
-}
-__host__ __device__ scene::scene(const unsigned int &_l_num)
-    : object_num(0), list_len(_l_num) {
-  object_list = new object *[_l_num];
 }
 
 __host__ __device__ bool scene::add_object(object *_tmp_o) {

@@ -7,6 +7,7 @@
 
 #include "hitinfo.cuh"
 #include "object.cuh"
+#include "stdio.h"
 
 class sphere : public object {
 private:
