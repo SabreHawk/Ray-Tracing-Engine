@@ -243,14 +243,4 @@ __host__ __device__ inline vector3 operator/(const vector3 &_v0,
   return {_v0[0] / _d, _v0[1] / _d, _v0[2] / _d};
 }
 
-__device__ vector3 random_in_unit_sphere(curandState *local_rand_state) {
-  vector3 p;
-  do {
-    p = 2.0f * vector3(curand_uniform(local_rand_state),
-                       curand_uniform(local_rand_state),
-                       curand_uniform(local_rand_state)) -
-        vector3(1, 1, 1);
-  } while (p.squared_length() >= 1.0f);
-  return p;
-}
 #endif // MATRIXOPERATION_CPP_vector3_H

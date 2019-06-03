@@ -6,49 +6,51 @@
 #define RAY_TRACING_ENGINE_CAMERA_CUDA_H
 #include "ray.cuh"
 
+__device__ vector3 random_in_unit_disk(curandState *local_rand_state) {
+  vector3 p;
+  do {
+    p = 2.0f * vector3(curand_uniform(local_rand_state),
+                       curand_uniform(local_rand_state), 0) -
+        vector3(1, 1, 0);
+  } while (dot(p, p) >= 1.0f);
+  return p;
+}
 class camera {
 public:
   vector3 origin;
   vector3 lower_left_corner;
   vector3 horizontal_vec;
   vector3 vertical_vec;
-  __device__ camera(const vector3 &, const vector3 &, const vector3 &,
-                    const vector3 &);
-  __device__ ray gen_ray(const float &, const float &);
+  vector3 u, v, w;
+  float lens_radius;
+  __device__ camera(vector3, vector3, vector3, float, float, float, float);
+  __device__ ray gen_ray(const float &, const float &, curandState *);
 };
 
-__device__ camera::camera(const vector3 &_origin,
-                          const vector3 &_lower_left_corner,
-                          const vector3 &_horizontal_vec,
-                          const vector3 &_vertical_vec) {
-  origin = _origin;
-  lower_left_corner = _lower_left_corner;
-  horizontal_vec = _horizontal_vec;
-  vertical_vec = _vertical_vec;
+__device__
+camera::camera(vector3 lookfrom, vector3 lookat, vector3 vup, float vfov,
+               float aspect, float aperture,
+               float focus_dist) { // vfov is top to bottom in degrees
+  lens_radius = aperture / 2.0f;
+  float theta = vfov * ((float)M_PI) / 180.0f;
+  float half_height = tan(theta / 2.0f);
+  float half_width = aspect * half_height;
+  origin = lookfrom;
+  w = (lookfrom - lookat).normalize();
+  u = (cross(vup, w)).normalize();
+  v = cross(w, u);
+  lower_left_corner = origin - half_width * focus_dist * u -
+                      half_height * focus_dist * v - focus_dist * w;
+  horizontal_vec = 2.0f * half_width * focus_dist * u;
+  vertical_vec = 2.0f * half_height * focus_dist * v;
 }
 
-__device__ ray camera::gen_ray(const float &_u, const float &_v) {
-  return ray(origin, lower_left_corner + _u * horizontal_vec +
-                         _v * vertical_vec - origin);
+__device__ ray camera::gen_ray(const float &s, const float &t,
+                               curandState *local_rand_state) {
+  vector3 rd = lens_radius * random_in_unit_disk(local_rand_state);
+  vector3 offset = u * rd.x() + v * rd.y();
+  return ray(origin + offset, lower_left_corner + s * horizontal_vec +
+                                  t * vertical_vec - origin - offset);
 }
-
-// class camera {
-// public:
-//   __device__ camera() {
-//     lower_left_corner = vector3(-2.0, -1.0, -1.0);
-//     horizontal = vector3(4.0, 0.0, 0.0);
-//     vertical = vector3(0.0, 2.0, 0.0);
-//     origin = vector3(0.0, 0.0, 0.0);
-//   }
-//   __device__ ray gen_ray(float u, float v) {
-//     return ray(origin,
-//                lower_left_corner + u * horizontal + v * vertical - origin);
-//   }
-
-//   vector3 origin;
-//   vector3 lower_left_corner;
-//   vector3 horizontal;
-//   vector3 vertical;
-// };
 
 #endif // RAY_TRACING_ENGINE_CAMERA_H
